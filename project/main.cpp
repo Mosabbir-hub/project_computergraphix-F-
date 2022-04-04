@@ -519,28 +519,7 @@ void car()
     glFlush();
 }
 
-void sun()
-{
-    glColor3ub(255, 126, 5);
-    glPushMatrix();
-    glTranslatef(0.0, sunPosition, 0.0f);
-    circle(0.9, 0.9, 0.1);
-    glPopMatrix();
 
-    glFlush();
-
-}
-
-void moon()
-{
-
-    glColor3ub(255,255,255);
-    glPushMatrix();
-    glTranslatef(0.0, moonPosition, 0.0f);
-    circle(-0.9,0.1,0.1);
-
-    glPopMatrix();
-}
 
 
 void railTrack()
@@ -705,59 +684,6 @@ void rail()
     glFlush();
 }
 
-void windmill()
-{
-    glPushMatrix();
-    glLineWidth(10.0);
-    glBegin(GL_LINES);
-    glColor3ub(117, 117, 117);
-    glVertex2f(0.0, 0.0);
-    glVertex2f(0.0, -0.28);
-    glEnd();
-    glPopMatrix();
-
-    glPushMatrix();
-    if(rt)
-    {
-        glRotatef(rotatei,0,0.0,0.1);
-    }
-    // P1
-    glBegin(GL_TRIANGLES);
-    glColor3ub(117, 117, 117);
-    glVertex2f(-0.2, 0);
-    glVertex2f(0.0f, 0.0f);
-    glVertex2f(-0.2, 0.1);
-    glEnd();
-
-    // P2
-    glBegin(GL_TRIANGLES);
-    glColor3ub(117, 117, 117);
-    glVertex2f(0.0f, 0.0f);
-    glVertex2f(0.1, 0.2);
-    glVertex2f(0, 0.2);
-    glEnd();
-
-    // P3
-    glBegin(GL_TRIANGLES);
-    glColor3ub(117, 117, 117);
-    glVertex2f(0.0f, 0.0f);
-    glVertex2f(0.2, -0.1);
-    glVertex2f(0.2, 0);
-    glEnd();
-
-    // P4
-    glBegin(GL_TRIANGLES);
-    glColor3ub(117, 117, 117);
-    glVertex2f(0.0f, 0.0f);
-    glVertex2f(-0.1, -0.2);
-    glVertex2f(0, -0.2);
-    glEnd();
-    glPopMatrix();
-    if(rt)
-    {
-        rotatei+=1.0f;
-    }
-}
 
 void windmill2()
 {
@@ -850,15 +776,15 @@ void display(void)
     glLineWidth(1);
 
     Sky();
-    sun();
-    moon();
+    
+   
     grass();
     field();
     clouds();
     hill();
     railTrack();
     rail();
-    windmill();
+   
     windmill2();
     glPushMatrix();
     building();
